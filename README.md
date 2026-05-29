@@ -147,7 +147,7 @@ High-level flow:
 <a name="project-structure"></a>
 ## 📁 Project Structure
 ```
-v 1/
+DezhCode/
 ├── app/
 │   ├── bot.py
 │   ├── config.py
