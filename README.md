@@ -1,332 +1,496 @@
-# Copilot Telegram Bot
+Copilot Telegram Bot
 
-<div align="center">
+<div align="center">  An intelligent Telegram bot based on Microsoft Copilot
 
- یک ربات تلگرام هوشمند مبتنی بر Microsoft Copilot
 
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
-[![Telegram Bot API](https://img.shields.io/badge/Telegram%20Bot-Aiogram%203-blue?logo=telegram)](https://aiogram.dev/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Stars](https://img.shields.io/github/stars/dezhcode/copilot-telegram-bot?style=social)](https://github.com/dezhcode/copilot-telegram-bot/stargazers)
 
-</div>
 
-## 📖 فهرست مطالب
 
-- [درباره پروژه](#-درباره-پروژه)
-- [ویژگی‌ها](#-ویژگی‌ها)
-- [کاربردها](#-کاربردها)
-- [راهنمای شروع سریع](#-شروع-سریع)
-- [راهنمای استفاده](#-راهنمای-استفاده)
-- [ساختار پروژه](#-ساختار-پروژه)
-- [توضیحات ماژول‌ها](#-توضیحات-ماژول‌ها)
-- [وابستگی‌ها](#-وابستگی‌ها)
-- [مشارکت](#-مشارکت)
-- [لایسنس](#-لایسنس)
 
----
+</div>  📖 Table of Contents
 
-## 📖 درباره پروژه
+About the Project
 
-این پروژه یک ربات تلگرام قدرتمند است که از Microsoft Copilot برای تولید پاسخ‌های هوشمند و دقیق استفاده می‌کند. این ربات با مدیریت هوشمند کانتکست، برای هر تاپیک (موضوع) یک حافظه جدا نگه می‌دارد و پاسخ‌ها را بر اساس زمینه گفتگو تولید می‌کند.
+Features
 
-### ویژگی‌های کلیدی:
-- استفاده از API Microsoft Copilot برای پاسخ‌دهی هوشمند
-- مدیریت کانتکست جدا برای هر تاپیک (موضوع)
-- پشتیبانی از 4 زبان مختلف (فارسی، انگلیسی، روسی، عربی)
-- حالت‌های مختلف پاسخ (کوتاه، نرمال، کامل، کد)
-- حالت پرایوت برای گفتگوهای حساس
-- ذخیره تاریخچه گفتگو در دیتابیس SQLite
-- سیستم تایید عضویت در کانال
+Use Cases
+
+Quick Start Guide
+
+Usage Guide
+
+Project Structure
+
+Module Descriptions
+
+Dependencies
+
+Contributing
+
+License
+
+
 
 ---
 
-## ✨ ویژگی‌ها
+📖 About the Project
 
-### 📝 پاسخ‌دهی هوشمند
-- استفاده از Microsoft Copilot برای تولید پاسخ‌های دقیق و مفید
-- استریم پاسخ به صورت زنده
-- پشتیبانی از Markdown برای نمایش کد و متن فرمت‌دار
+This project is a powerful Telegram bot that uses Microsoft Copilot to generate smart and accurate responses. The bot manages context intelligently by keeping a separate memory for each topic (thread), generating responses based on conversation context.
 
-### 🌍 پشتیبانی چندزبانه
-- فارسی (🇮🇷)
-- انگلیسی (🇺🇸)
-- روسی (🇷🇺)
-- عربی (🇸🇦)
-- تشخیص خودکار زبان کاربر
+Key Features:
 
-### 📂 مدیریت کانتکست
-- کانتکست جدا برای هر تاپیک (موضوع)
-- ذخیره تاریخچه گفتگو
-- ایجاد خلاصه از تاپیک‌ها
-- مشاهده تاریخچه گفتگو
+Uses Microsoft Copilot API for intelligent responses
 
-### 🎛️ حالت‌های مختلف پاسخ
-- **کوتاه**: پاسخ‌های موجز و مختصر
-- **نرمال**: پاسخ‌های متعادل (پیش‌فرض)
-- **کامل**: پاسخ‌های مفصل و کامل
-- **کد**: پاسخ‌های با تمرکز بر کد و مثال‌های عملی
+Separate context management for each topic (thread)
 
-### 🔒 حالت پرایوت
-- عدم ذخیره پیام‌ها در دیتابیس
-- عدم استفاده از تاریخچه گفتگو برای کانتکست
-- مناسب برای گفتگوهای حساس یا یکبارمصرف
+Supports 4 languages (Persian, English, Russian, Arabic)
 
-### 📊 آمار و تاریخچه
-- مشاهده آمار شخصی
-- تاریخچه پیام‌ها در هر تاپیک
-- نمایش مدت زمان تولید پاسخ
+Multiple response modes (short, normal, full, code)
 
-### ✅ تایید عضویت
-- سیستم تایید عضویت در کانال
-- قابلیت سفارشی‌سازی کانال
+Private mode for sensitive conversations
+
+Stores chat history in SQLite database
+
+Channel membership verification system
+
+
 
 ---
 
-## 💡 کاربردها
+✨ Features
 
-### 📚 آموزش و یادگیری
-- پاسخ به سوالات تحصیلی در مختلف رشته‌ها
-- توضیح مفاهیم پیچیده به زبان ساده
-- حل مسائل ریاضی، فیزیک و غیره
-- آماده‌سازی برای امتحانات
+📝 Smart Responses
 
-### 💻 برنامه‌نویسی
-- رفع اشکال کد (Debugging)
-- توضیح الگوریتم‌ها و ساختارهای داده
-- نوشتن و بهبود کد
-- پیشنهاد بهترین روش‌ها (Best Practices)
-- پشتیبانی از زبان‌های مختلف برنامه‌نویسی
+Uses Microsoft Copilot for accurate and useful answers
 
-### 📝 خلاصه‌سازی و نوشتن
-- خلاصه‌سازی متون طولانی
-- نوشتن ایمیل، مقاله و متن‌های مختلف
-- بهبود سبک نوشتاری
-- اصلاح گرامر و غلط‌های املایی
+Live streaming responses
 
-### 🤝 مشاوره عمومی
-- پاسخ به سوالات روزمره
-- مشاوره در مختلف زمینه‌ها
-- پیشنهاد ایده و راه‌حل
+Markdown support for formatted text and code
 
-### 🌐 ترجمه و زبان
-- ترجمه متن‌ها بین زبان‌های مختلف
-- یادگیری واژگان و دستور زبان
-- بهبود مهارت‌های زبانی
+
+🌍 Multilingual Support
+
+Persian (🇮🇷)
+
+English (🇺🇸)
+
+Russian (🇷🇺)
+
+Arabic (🇸🇦)
+
+Automatic language detection
+
+
+📂 Context Management
+
+Separate context per topic (thread)
+
+Chat history storage
+
+Topic summarization
+
+View conversation history
+
+
+🎛️ Response Modes
+
+Short: brief and concise answers
+
+Normal: balanced responses (default)
+
+Full: detailed and comprehensive answers
+
+Code: focused on programming and examples
+
+
+🔒 Private Mode
+
+No message storage in database
+
+No use of chat history for context
+
+Suitable for sensitive or one-time conversations
+
+
+📊 Stats & History
+
+Personal usage statistics
+
+Message history per topic
+
+Response generation time tracking
+
+
+✅ Membership Verification
+
+Channel membership verification system
+
+Customizable channel settings
+
+
 
 ---
 
-## 🚀 شروع سریع
+💡 Use Cases
 
-### پیش‌نیازها
+📚 Education & Learning
 
-قبل از شروع، مطمئن شوید که موارد زیر نصب شده‌اند:
+Answer academic questions across disciplines
 
-- **Python 3.8** یا نسخه‌های بالاتر
-- **pip** (مدیر بسته Python)
-- یک توکن ربات تلگرام (از [@BotFather](https://t.me/BotFather))
+Explain complex concepts simply
 
-### گام‌های نصب و اجرا
+Solve math, physics, and similar problems
 
-#### 1. کلون کردن ریپازیتوری
-```bash
-git clone https://github.com/dezhcode/copilot-telegram-bot.git
+Exam preparation
+
+
+💻 Programming
+
+Code debugging
+
+Explaining algorithms and data structures
+
+Writing and improving code
+
+Suggesting best practices
+
+Multi-language programming support
+
+
+📝 Summarization & Writing
+
+Summarizing long texts
+
+Writing emails, articles, and content
+
+Improving writing style
+
+Grammar and spelling correction
+
+
+🤝 General Advice
+
+Everyday questions
+
+Guidance across various topics
+
+Idea and solution suggestions
+
+
+🌐 Translation & Language
+
+Translating between languages
+
+Learning vocabulary and grammar
+
+Improving language skills
+
+
+
+---
+
+🚀 Quick Start
+
+Prerequisites
+
+Before starting, make sure you have:
+
+Python 3.8+
+
+pip (Python package manager)
+
+A Telegram bot token (from @BotFather)
+
+
+Installation Steps
+
+1. Clone the repository
+
+git clone https://github.com/dezhcode/copilot-telegram-bot.git  
 cd copilot-telegram-bot
-```
 
-#### 2. نصب وابستگی‌ها
-```bash
+2. Install dependencies
+
 pip install -r requirements.txt
-```
 
-#### 3. تنظیم متغیرهای محیطی
-یک فایل به نام `.env` در ریشه پروژه بسازید و مقادیر زیر را در آن قرار دهید:
-```env
-# توکن ربات تلگرام (ضروری)
-BOT_TOKEN=your_bot_token_here
+3. Configure environment variables
 
-# تنظیمات کارگرها (اختیاری)
-USER_LLM_WORKERS=2        # تعداد کارگرهای پردازش پیام‌های کاربر
-NLP_LLM_WORKERS=1         # تعداد کارگرهای پردازش NLP
-LLM_QUEUE_SIZE=200        # حداکثر اندازه صف درخواست‌ها
-```
+Create a .env file in the project root and add:
 
-#### 4. اجرای ربات
-```bash
+# Telegram bot token (required)  
+BOT_TOKEN=your_bot_token_here  
+
+# Worker settings (optional)  
+USER_LLM_WORKERS=2  
+NLP_LLM_WORKERS=1  
+LLM_QUEUE_SIZE=200
+
+4. Run the bot
+
 python main.py
-```
 
-#### 5. شروع استفاده
-- ربات تلگرام خود را پیدا کنید
-- دستور `/start` را ارسال کنید
-- زبان خود را انتخاب کنید
-- عضویت خود در کانال را تایید کنید
-- شروع به چت کنید!
+5. Start using
 
----
+Find your bot on Telegram
 
-## 📖 راهنمای استفاده
+Send /start
 
-### دستورات اصلی
+Choose your language
 
-| دستور | توضیحات |
-|--------|---------|
-| `/start` | شروع کار با ربات |
-| `/help` | نمایش راهنما و منو |
-| `/lang` | تغییر زبان |
-| `/settings` | نمایش تنظیمات |
-| `/profile` | مشاهده پروفایل |
-| `/mode` | تغییر حالت پاسخ |
-| `/history` | تاریخچه همین تاپیک |
-| `/reset` | پاک کردن کانتکست همین تاپیک |
-| `/reset_all` | پاک کردن همه تاپیک‌ها |
-| `/stats` | مشاهده آمار |
-| `/about` | درباره ربات |
+Verify channel membership
 
-### نحوه استفاده
-1. **شروع گفتگو**: فقط پیام خود را ارسال کنید
-2. **ریپلای به پیام**: اگر روی یک پیام ریپلای کنید، ربات آن پیام را نیز در کانتکست در نظر می‌گیرد
-3. **تغییر حالت پاسخ**: از دستور `/mode` یا منوی تنظیمات استفاده کنید
-4. **مشاهده تاریخچه**: با دستور `/history` تاریخچه همین تاپیک را ببینید
-5. **پاک کردن کانتکست**: با `/reset` کانتکست همین تاپیک را پاک کنید
+Start chatting
+
+
 
 ---
 
-## 📁 ساختار پروژه
+📖 Usage Guide
 
-```
-v 1/
-├── app/
-│   ├── __init__.py           # فایل شروع ماژول app
-│   ├── bot.py                # منطق اصلی ربات و کنترل‌کننده‌ها
-│   ├── config.py             # بارگذاری تنظیمات از متغیرهای محیطی
-│   ├── copilot_client.py     # کلاینت ارتباط با Microsoft Copilot
-│   ├── storage.py            # مدیریت دیتابیس SQLite
-│   └── ui_texts.py           # متون رابط کاربری و زبان‌ها
-├── main.py                   # نقطه ورود برنامه
-├── requirements.txt          # لیست وابستگی‌ها
-├── .gitignore                # فایل‌های نادیده گرفته شده در Git
-├── LICENSE                   # فایل لایسنس MIT
-└── README.md                 # همین فایل!
-```
+Main Commands
 
----
+Command	Description
 
-## 🔧 توضیحات ماژول‌ها
+/start	Start the bot
+/help	Show help menu
+/lang	Change language
+/settings	Show settings
+/profile	View profile
+/mode	Change response mode
+/history	Current topic history
+/reset	Clear current topic context
+/reset_all	Clear all topics
+/stats	View statistics
+/about	About the bot
 
-### 1. `main.py`
-نقطه ورود برنامه است. این فایل:
-- رویداد `asyncio` را تنظیم می‌کند
-- تابع `run_bot()` را از ماژول `app.bot` فراخوانی می‌کند
-- ربات را شروع می‌کند
 
-### 2. `app/config.py`
-تنظیمات ربات را از متغیرهای محیطی بارگذاری می‌کند. شامل:
-- `Config` کلاس: برای ذخیره تنظیمات
-- `load_config()` تابع: برای بارگذاری تنظیمات
-- تنظیمات پیش‌فرض برای هر متغیر
+How to Use
 
-**متغیرهای محیطی پشتیبانی شده:**
-- `BOT_TOKEN`: توکن ربات تلگرام (ضروری)
-- `USER_LLM_WORKERS`: تعداد کارگرهای پیام‌های کاربر (پیش‌فرض: 2)
-- `NLP_LLM_WORKERS`: تعداد کارگرهای NLP (پیش‌فرض: 1)
-- `LLM_QUEUE_SIZE`: حداکثر اندازه صف (پیش‌فرض: 200)
+1. Start chatting: just send a message
 
-### 3. `app/storage.py`
-مدیریت دیتابیس SQLite را انجام می‌دهد. شامل:
-- `StoredMessage` کلاس: برای نمایش پیام‌های ذخیره شده
-- `Storage` کلاس: برای مدیریت دیتابیس
-- ذخیره‌سازی: کاربران، پیام‌ها، تنظیمات تاپیک‌ها، خلاصه‌ها، حقایق پروفایل
 
-**جدول‌های دیتابیس:**
-- `users`: اطلاعات کاربران
-- `chats`: اطلاعات چت‌ها
-- `messages`: پیام‌های گفتگو
-- `thread_settings`: تنظیمات هر تاپیک
-- `profile_facts`: حقایق پروفایل کاربر
-- `topic_summaries`: خلاصه تاپیک‌ها
-- `topic_message_ids`: ID‌های پیام‌های تاپیک
+2. Reply context: replying to a message includes it in context
 
-### 4. `app/copilot_client.py`
-ارتباط با Microsoft Copilot را مدیریت می‌کند. شامل:
-- `CopilotSession` کلاس: برای ذخیره اطلاعات جلسه
-- `CopilotClient` کلاس: کلاینت اصلی
-- `ask()`: ارسال پیام و دریافت پاسخ کامل
-- `ask_stream()`: ارسال پیام و دریافت پاسخ به صورت استریم
-- `_start_conversation()`: شروع گفتگو جدید
-- `_chat_stream()`: مدیریت ارتباط WebSocket
 
-### 5. `app/ui_texts.py`
-تمامی متون رابط کاربری را در خود دارد. شامل:
-- `SUPPORTED_LANGS`: لیست زبان‌های پشتیبانی شده
-- `TEXTS`: دیکشنری تمام متون به زبان‌های مختلف
-- `t()` تابع: برای گرفتن متن مناسب زبان
-- `kb_language()`: کیبورد انتخاب زبان
-- `kb_join()`: کیبورد عضویت در کانال
-- `kb_settings()`: کیبورد تنظیمات
-- و سایر کیبورد‌های inline
+3. Change mode: use /mode or settings menu
 
-### 6. `app/bot.py`
-منطق اصلی ربات در این فایل قرار دارد. شامل:
-- `_StreamWorkerPool` کلاس: استخر کارگرها برای مدیریت صف
-- `QueuedCopilotClient` کلاس: مدیریت درخواست‌ها با صف
-- `build_dispatcher()`: ساخت دیسپچر aiogram
-- کنترل‌کننده‌های دستورات (command handlers)
-- کنترل‌کننده‌های callback (inline buttons)
-- کنترل‌کننده پیام‌های متنی
-- مدیریت استریم پاسخ‌ها
-- تایید عضویت در کانال
-- مدیریت کانتکست گفتگو
+
+4. View history: /history for current thread
+
+
+5. Reset context: /reset clears current topic
+
+
+
 
 ---
 
-## 📦 وابستگی‌ها
+📁 Project Structure
 
-| وابستگی | نسخه | توضیحات |
-|---------|------|---------|
-| `aiogram` | `>=3.0.0` | فریمورک مدرن برای ساخت ربات‌های تلگرام |
-| `aiohttp` | `>=3.8.0` | کلاینت HTTP ناهمزمان (async) |
-| `requests` | `>=2.28.0` | کلاینت HTTP همزمان |
-| `websockets` | `>=11.0.0` | کتابخانه برای ارتباط WebSocket |
+v 1/  
+├── app/  
+│   ├── __init__.py  
+│   ├── bot.py  
+│   ├── config.py  
+│   ├── copilot_client.py  
+│   ├── storage.py  
+│   └── ui_texts.py  
+├── main.py  
+├── requirements.txt  
+├── .gitignore  
+├── LICENSE  
+└── README.md
 
----
-
-## 🤝 مشارکت
-
-مشارکت‌ها خوش آمدید! لطفاً مراحل زیر را دنبال کنید:
-
-1. این ریپازیتوری را فورک کنید
-2. یک شاخه (branch) جدید بسازید: `git checkout -b feature/AmazingFeature`
-3. تغییرات خود را کامیت کنید: `git commit -m 'Add some AmazingFeature'`
-4. به شاخه خود پوش کنید: `git push origin feature/AmazingFeature`
-5. یک Pull Request بسازید
-
-### رهنمودهای مشارکت:
-- کد خود را به خوبی مستند کنید
-- قبل از کامیت، تست‌های لازم را انجام دهید
-- پیام‌های کامیت واضح و مفید بنویسید
-- اگر ویژگی جدید اضافه می‌کنید، آن را در README نیز اضافه کنید
 
 ---
 
-## 📄 لایسنس
+🔧 Module Descriptions
 
-این پروژه تحت لایسنس MIT منتشر شده است. برای اطلاعات بیشتر فایل [LICENSE](LICENSE) را بخوانید.
+1. main.py
+
+Entry point of the application:
+
+Configures asyncio event loop
+
+Calls run_bot() from app.bot
+
+Starts the bot
+
+
+2. app/config.py
+
+Loads configuration from environment variables:
+
+Config class
+
+load_config() function
+
+Default values handling
+
+
+Environment variables:
+
+BOT_TOKEN (required)
+
+USER_LLM_WORKERS (default: 2)
+
+NLP_LLM_WORKERS (default: 1)
+
+LLM_QUEUE_SIZE (default: 200)
+
+
+3. app/storage.py
+
+Handles SQLite database:
+
+StoredMessage class
+
+Storage class
+
+Manages users, messages, settings, summaries
+
+
+Database tables:
+
+users
+
+chats
+
+messages
+
+thread_settings
+
+profile_facts
+
+topic_summaries
+
+topic_message_ids
+
+
+4. app/copilot_client.py
+
+Manages Microsoft Copilot communication:
+
+CopilotSession class
+
+CopilotClient class
+
+ask() for full responses
+
+ask_stream() for streaming responses
+
+WebSocket communication handling
+
+
+5. app/ui_texts.py
+
+UI text and localization:
+
+Supported languages list
+
+UI text dictionary
+
+t() translation function
+
+Keyboard builders
+
+
+6. app/bot.py
+
+Core bot logic:
+
+Worker pool system
+
+Request queue management
+
+Aiogram dispatcher setup
+
+Command handlers
+
+Callback handlers
+
+Message streaming logic
+
+Context management
+
+Channel membership verification
+
+
 
 ---
 
-## 👨‍💻 توسعه‌دهنده
+📦 Dependencies
 
-- **Dezhcode** - [GitHub](https://github.com/dezhcode)
+Dependency	Version	Description
+
+aiogram	>=3.0.0	Modern Telegram bot framework
+aiohttp	>=3.8.0	Async HTTP client
+requests	>=2.28.0	Sync HTTP client
+websockets	>=11.0.0	WebSocket library
+
+
 
 ---
 
-## 🙏 قدردانی
+🤝 Contributing
 
-- از [Microsoft Copilot](https://copilot.microsoft.com/) برای API هوش مصنوعی
-- از [aiogram](https://aiogram.dev/) برای فریمورک عالی ربات تلگرام
-- از شما که این پروژه را بررسی می‌کنید!
+Contributions are welcome!
+
+1. Fork the repository
+
+
+2. Create a new branch: git checkout -b feature/AmazingFeature
+
+
+3. Commit changes: git commit -m 'Add AmazingFeature'
+
+
+4. Push branch: git push origin feature/AmazingFeature
+
+
+5. Open a Pull Request
+
+
+
+Guidelines:
+
+Document your code properly
+
+Test before committing
+
+Write clear commit messages
+
+Update README if needed
+
+
 
 ---
 
-## Programmed by Dezhcode
+📄 License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+
+---
+
+👨‍💻 Developer
+
+Dezhcode - GitHub
+
+
+
+---
+
+🙏 Acknowledgements
+
+Microsoft Copilot for AI API
+
+aiogram for Telegram bot framework
+
+Everyone who reviews this project
+
+
+
+---
+
+Programmed by Dezhcode
