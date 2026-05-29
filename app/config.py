@@ -11,7 +11,7 @@ class Config:
 
 
 def load_config() -> Config:
-    bot_token = os.getenv("BOT_TOKEN", "8254653713:AAErzikwSYYLQUthSx1s5DmBsfEmXSQTwKQ").strip()
+    bot_token = os.getenv("BOT_TOKEN", "").strip()
     if not bot_token:
         raise RuntimeError("BOT_TOKEN is not set")
     user_llm_workers = int(os.getenv("USER_LLM_WORKERS", "2").strip() or "2")
