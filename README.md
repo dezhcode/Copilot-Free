@@ -1,10 +1,10 @@
-# Copilot Free Telegram Bot
+# Copilot Free
 
 <div align="center">
 
 <img src="image/Copilot-free.jpg" alt="Copilot Free Logo" width="220" />
 
-**Copilot Free** — ربات تلگرام هوشمند مبتنی بر Microsoft Copilot  
+**Copilot Free** — a smart Telegram bot powered by Microsoft Copilot  
 [@CopilotFreeBot](https://t.me/CopilotFreeBot) • [Channel](https://t.me/Dezhcode)
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
@@ -14,70 +14,78 @@
 
 </div>
 
-## � شروع سریع
-- نصب: `pip install -r requirements.txt`
-- تنظیم توکن: `BOT_TOKEN=...`
-- اجرا: `python main.py`
+Language: **English** • [فارسی](README.fa.md)
 
-## 🧭 فهرست
-- [درباره](#-درباره)
-- [ویژگی‌ها](#-ویژگیها)
-- [کاربردها](#-کاربردها)
-- [نصب و اجرا](#-نصب-و-اجرا)
-- [پیکربندی](#-پیکربندی)
-- [دستورات ربات](#-دستورات-ربات)
-- [نحوه کار](#-نحوه-کار)
-- [ساختار پروژه](#-ساختار-پروژه)
-- [ماژول‌ها](#-ماژولها)
-- [وابستگی‌ها](#-وابستگیها)
-- [مشارکت](#-مشارکت)
-- [لایسنس](#-لایسنس)
+<a name="quick-start"></a>
+## 🚀 Quick Start
+- Install: `pip install -r requirements.txt`
+- Set token: `BOT_TOKEN=...`
+- Run: `python main.py`
 
----
-
-## 📖 درباره
-Copilot Free یک ربات تلگرام است که پاسخ‌ها را با Microsoft Copilot تولید می‌کند. ربات برای هر تاپیک (Topic/Thread) کانتکست جدا نگه می‌دارد تا گفتگوها قاطی نشوند و پاسخ‌ها مرتبط‌تر باشند.
-
-**لینک‌های مهم**
-- ربات: [@CopilotFreeBot](https://t.me/CopilotFreeBot)
-- کانال: [Dezhcode](https://t.me/Dezhcode)
+<a name="toc"></a>
+## 🧭 Contents
+- [About](#about)
+- [Features](#features)
+- [Use Cases](#use-cases)
+- [Install & Run](#install--run)
+- [Configuration](#configuration)
+- [Bot Commands](#bot-commands)
+- [How It Works](#how-it-works)
+- [Project Structure](#project-structure)
+- [Modules](#modules)
+- [Dependencies](#dependencies)
+- [Contributing](#contributing)
+- [License](#license)
 
 ---
 
-## ✨ ویژگی‌ها
-- چندزبانه: فارسی، انگلیسی، روسی، عربی
-- مدیریت کانتکست جدا برای هر تاپیک + تاریخچه
-- استریم پاسخ (نمایش تدریجی پاسخ در تلگرام)
-- حالت‌های پاسخ: کوتاه / نرمال / کامل / کد
-- حالت Private برای گفتگوهای حساس (عدم ذخیره‌سازی در DB)
-- آمار و ابزارهای مدیریت گفتگو (history/reset/stats)
-- سیستم تایید عضویت در کانال
+<a name="about"></a>
+## 📖 About
+Copilot Free is a Telegram bot that generates answers using Microsoft Copilot. It keeps **separate context per topic/thread**, so conversations don’t mix and responses stay relevant.
+
+**Links**
+- Bot: [@CopilotFreeBot](https://t.me/CopilotFreeBot)
+- Channel: [Dezhcode](https://t.me/Dezhcode)
 
 ---
 
-## 💡 کاربردها
-- پاسخ به سوالات عمومی و روزمره
-- کمک برنامه‌نویسی (اشکال‌زدایی، توضیح کد، تولید نمونه کد)
-- خلاصه‌سازی، بازنویسی و بهبود متن
-- ترجمه و تمرین زبان
+<a name="features"></a>
+## ✨ Features
+- Multi-language: Persian, English, Russian, Arabic
+- Separate context per topic + stored history (SQLite)
+- Streaming responses (gradual updates in Telegram)
+- Reply modes: short / normal / detailed / code
+- Private mode for sensitive chats (no DB storage, no history context)
+- Conversation utilities (history/reset/stats)
+- Channel membership verification
 
 ---
 
-## 🧰 نصب و اجرا
+<a name="use-cases"></a>
+## 💡 Use Cases
+- General Q&A and daily assistance
+- Programming help (debugging, code explanations, code snippets)
+- Summarization, rewriting, improving text
+- Translation and language practice
 
-### 1) دریافت پروژه
+---
+
+<a name="install--run"></a>
+## 🧰 Install & Run
+
+### 1) Get the project
 ```bash
 git clone <REPO_URL>
 cd <REPO_DIR>
 ```
 
-### 2) نصب وابستگی‌ها
+### 2) Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3) تنظیم BOT_TOKEN
-این پروژه تنظیمات را از **متغیرهای محیطی** می‌خواند.
+### 3) Set BOT_TOKEN and run
+This project reads configuration from **environment variables**.
 
 **Windows (PowerShell)**
 ```powershell
@@ -91,49 +99,53 @@ export BOT_TOKEN="YOUR_TELEGRAM_BOT_TOKEN"
 python main.py
 ```
 
-نکته: اگر از فایل `.env` استفاده می‌کنید، مطمئن شوید در محیط اجرا، متغیرها واقعاً Load می‌شوند (خود پروژه به‌تنهایی فایل `.env` را نمی‌خواند).
+Note: If you use a `.env` file, make sure your runtime actually loads it (this project does not automatically read `.env` by itself).
 
 ---
 
-## ⚙️ پیکربندی
+<a name="configuration"></a>
+## ⚙️ Configuration
 
-| متغیر | پیش‌فرض | توضیح |
-|------|---------|------|
-| `BOT_TOKEN` | — | توکن ربات تلگرام (ضروری) |
-| `USER_LLM_WORKERS` | `2` | تعداد worker برای پیام‌های عادی کاربران |
-| `NLP_LLM_WORKERS` | `1` | تعداد worker برای کارهای سنگین‌تر/اولویت‌دار |
-| `LLM_QUEUE_SIZE` | `200` | ظرفیت صف درخواست‌ها |
-
----
-
-## 🧾 دستورات ربات
-
-| دستور | توضیح |
-|------|------|
-| `/start` | شروع و انتخاب زبان |
-| `/help` | راهنما و منو |
-| `/lang` | تغییر زبان |
-| `/settings` | تنظیمات (حالت پاسخ، زمان، Private mode) |
-| `/mode` | تغییر حالت پاسخ |
-| `/history` | تاریخچه همین تاپیک |
-| `/reset` | پاکسازی کانتکست همین تاپیک |
-| `/reset_all` | پاکسازی همه تاپیک‌ها |
-| `/stats` | آمار کاربر |
-| `/about` | درباره ربات |
+| Variable | Default | Description |
+|---|---:|---|
+| `BOT_TOKEN` | — | Telegram bot token (required) |
+| `USER_LLM_WORKERS` | `2` | Worker count for normal user messages |
+| `NLP_LLM_WORKERS` | `1` | Worker count for higher priority / heavier jobs |
+| `LLM_QUEUE_SIZE` | `200` | Request queue capacity |
 
 ---
 
-## 🔎 نحوه کار
-جریان کلی پاسخ‌دهی به این شکل است:
-1. پیام کاربر دریافت می‌شود (در صورت Reply شدن، متن پیام ریپلای‌شده هم وارد کانتکست می‌شود)
-2. کانتکست/تاریخچه مربوط به تاپیک از SQLite خوانده می‌شود (اگر Private mode خاموش باشد)
-3. درخواست وارد صف می‌شود و توسط workerها پردازش می‌گردد
-4. درخواست به Copilot ارسال می‌شود و پاسخ به صورت استریم برمی‌گردد
-5. پاسخ به تلگرام ارسال/آپدیت می‌شود و در دیتابیس ذخیره می‌گردد (اگر Private mode خاموش باشد)
+<a name="bot-commands"></a>
+## 🧾 Bot Commands
+
+| Command | Description |
+|---|---|
+| `/start` | Start + language selection |
+| `/help` | Help & menu |
+| `/lang` | Change language |
+| `/settings` | Settings (reply mode, time, private mode) |
+| `/mode` | Change reply mode |
+| `/history` | Current topic history |
+| `/reset` | Clear current topic context |
+| `/reset_all` | Clear all topics |
+| `/stats` | User stats |
+| `/about` | About the bot |
 
 ---
 
-## 📁 ساختار پروژه
+<a name="how-it-works"></a>
+## 🔎 How It Works
+High-level flow:
+1. Receives a user message (if it’s a reply, the replied message is included)
+2. Loads topic history from SQLite (unless private mode is enabled)
+3. Enqueues the request and processes it using worker pools
+4. Sends the prompt to Copilot and receives a streaming response
+5. Updates Telegram message(s) and saves the result (unless private mode is enabled)
+
+---
+
+<a name="project-structure"></a>
+## 📁 Project Structure
 ```
 v 1/
 ├── app/
@@ -153,51 +165,52 @@ v 1/
 
 ---
 
-## 🧩 ماژول‌ها
+<a name="modules"></a>
+## 🧩 Modules
 
 <details>
-<summary><strong>main.py</strong> — نقطه ورود</summary>
+<summary><strong>main.py</strong> — entry point</summary>
 
-- اجرای `run_bot()` و راه‌اندازی حلقه asyncio
+- Runs `run_bot()` and starts the asyncio loop.
 </details>
 
 <details>
-<summary><strong>app/config.py</strong> — خواندن تنظیمات</summary>
+<summary><strong>app/config.py</strong> — configuration loader</summary>
 
-- خواندن متغیرهای محیطی و اعمال حداقل‌های منطقی برای worker/queue
+- Reads environment variables and applies safe minimums for worker/queue values.
 </details>
 
 <details>
-<summary><strong>app/copilot_client.py</strong> — ارتباط با Copilot</summary>
+<summary><strong>app/copilot_client.py</strong> — Copilot connectivity</summary>
 
-- شروع conversation و ارسال پیام از طریق WebSocket
-- دریافت پاسخ به صورت استریم
+- Starts a Copilot conversation and sends messages via WebSocket.
+- Streams partial text as it arrives.
 </details>
 
 <details>
-<summary><strong>app/storage.py</strong> — دیتابیس SQLite</summary>
+<summary><strong>app/storage.py</strong> — SQLite storage</summary>
 
-- ذخیره کاربران، پیام‌ها، تنظیمات تاپیک و خلاصه‌ها
-- فراهم کردن تاریخچه برای ساخت prompt بهتر
+- Stores users, messages, topic settings, and summaries.
+- Provides history for better prompts.
 </details>
 
 <details>
-<summary><strong>app/ui_texts.py</strong> — متن‌ها و کیبوردها</summary>
+<summary><strong>app/ui_texts.py</strong> — texts & keyboards</summary>
 
-- متن‌های چندزبانه و ساخت inline keyboardها (زبان/عضویت/منو)
+- Multi-language UI texts and inline keyboards (language/join/menu).
 </details>
 
 <details>
-<summary><strong>app/bot.py</strong> — منطق ربات</summary>
+<summary><strong>app/bot.py</strong> — bot logic</summary>
 
-- هندلرهای دستورات و پیام‌ها
-- مدیریت صف/workerها و استریم پاسخ به کاربر
-- بررسی عضویت در کانال
+- Command and message handlers.
+- Worker pools, streaming to Telegram, and membership verification.
 </details>
 
 ---
 
-## 📦 وابستگی‌ها
+<a name="dependencies"></a>
+## 📦 Dependencies
 - `aiogram>=3.0.0`
 - `aiohttp>=3.8.0`
 - `requests>=2.28.0`
@@ -205,14 +218,16 @@ v 1/
 
 ---
 
-## 🤝 مشارکت
-- Issue و Pull Request خوش‌آمدید.
-- لطفاً توکن‌ها/کلیدها را داخل ریپو کامیت نکنید.
+<a name="contributing"></a>
+## 🤝 Contributing
+- Issues and pull requests are welcome.
+- Do not commit tokens/keys into the repository.
 
 ---
 
-## 📄 لایسنس
-MIT — فایل [LICENSE](LICENSE)
+<a name="license"></a>
+## 📄 License
+MIT — see [LICENSE](LICENSE)
 
 ---
 
