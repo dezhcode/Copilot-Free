@@ -1,13 +1,16 @@
-# Copilot Telegram Bot
+# Copilot Free Telegram Bot
 
 <div align="center">
 
- یک ربات تلگرام هوشمند مبتنی بر Microsoft Copilot
+<img src="image/Copilot-free.jpg" alt="Copilot Free Logo" width="180" />
+
+Copilot Free — یک ربات تلگرام هوشمند مبتنی بر Microsoft Copilot
+
+[@CopilotFreeBot](https://t.me/CopilotFreeBot) • [Channel](https://t.me/Dezhcode)
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![Telegram Bot API](https://img.shields.io/badge/Telegram%20Bot-Aiogram%203-blue?logo=telegram)](https://aiogram.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Stars](https://img.shields.io/github/stars/dezhcode/copilot-telegram-bot?style=social)](https://github.com/dezhcode/copilot-telegram-bot/stargazers)
 
 </div>
 
@@ -130,8 +133,8 @@
 
 #### 1. کلون کردن ریپازیتوری
 ```bash
-git clone https://github.com/dezhcode/copilot-telegram-bot.git
-cd copilot-telegram-bot
+git clone <REPO_URL>
+cd <REPO_DIR>
 ```
 
 #### 2. نصب وابستگی‌ها
